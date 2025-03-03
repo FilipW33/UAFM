@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt - SSUAFM</title>
+    <link rel="stylesheet" href="hamburger.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+</head>
+<body>
+    <nav class="absolute text-black w-full px-4 py-4 flex justify-between items-center xl:px-20 transition-all duration-700 bg-white shadow-md">
+        <a href="index.html" class="text-3xl font-bold">SSUAFM</a>
+        <ul class="flex gap-8 items-center font-semibold text-lg">
+            <li><a href="index.html" class="hover:underline">Strona Główna</a></li>
+            <li><a href="events.html" class="hover:underline">Wydarzenia</a></li>
+            <li><a href="contact.html" class="hover:underline">Kontakt</a></li>
+            <li><a href="faq.html" class="hover:underline">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <section id="contact" class="max-w-lg mx-auto py-24">
+        <h2 class="text-6xl font-bold text-center">Kontakt</h2>
+        <form class="bg-white p-6 rounded-lg shadow-md space-y-4 mt-8" onsubmit="handleFormSubmit(event)">
+            <label for="name" class="block font-medium">Imię:</label>
+            <input type="text" id="name" name="name" class="w-full border p-2 rounded-md" placeholder="Wpisz swoje imię" />
+
+            <label for="email" class="block font-medium">E-mail:</label>
+            <input type="email" id="email" name="email" class="w-full border p-2 rounded-md" placeholder="Wpisz swój e-mail" />
+
+            <label for="subject" class="block font-medium">Wybierz kategorie:</label>
+            <select id="subject" name="subject" class="w-full border p-2 rounded-md">
+                <option value="zapytanie">Zapytanie</option>
+                <option value="skarga">Skarga</option>
+                <option value="wsparcie">Wsparcie Techniczne</option>
+                <option value="inne">Inne</option>
+            </select>
+
+            <label for="message" class="block font-medium">Wiadomość:</label>
+            <textarea id="message" name="message" class="w-full border p-2 rounded-md" rows="4" placeholder="Wpisz swoją wiadomość"></textarea>
+
+            <button type="submit" class="w-full bg-primary text-white font-medium py-2 rounded-md hover:bg-blue-600 transition">
+                Wyślij
+            </button>
+        </form>
+    </section>
+
+    <footer class="w-full px-6 py-8 bg-primary text-center text-black">
+        © Wszystkie prawa zastrzeżone Parlament UAFM
+    </footer>
+</body>
+</html>

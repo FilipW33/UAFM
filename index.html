@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <link rel="stylesheet" href="hamburger.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00608C",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <nav
+      class="absolute text-black w-full px-4 py-4 z-4 flex justify-between items-center xl:px-20 z-40 transition-all duration-700"
+    >
+      <a href="/" class="flex justify-center items-center gap-4 z-30">
+        <div class="flex flex-col items-start justify-center">
+          <h2
+            class="whitespace-nowrap text-3xl md:text-5xl font-bold transition-color duration-150"
+          >
+            SSUAFM
+          </h2>
+        </div>
+      </a>
+      <label class="flex lg:hidden z-50 relative">
+        <input type="checkbox" id="check" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <div
+        id="mobileNavigation"
+        class="fixed top-0 right-0 h-screen w-fit bg-gradient-to-br from-neutral-100 to-neutral-300 flex flex-col items-center justify-start pt-24 border-l-2 border-white translate-x-[100%] transition-all duration-1000 origin-right ease-in-out z-40"
+      >
+        <ul
+          class="flex flex-col justify-center items-end gap-8 text-xl font-bold p-8"
+        >
+          <li>
+            <a class="z-20" href="#home">Strona Główna</a>
+          </li>
+          <li>
+            <a class="z-20" href="events.html">Wydarzenia</a>
+          </li>
+          <li>
+            <a class="z-20" href="FAQ.html">FAQ</a>
+          </li>
+          <li>
+            <a class="z-20" href="contact.html">Kontakt</a>
+          </li>
+        </ul>
+      </div>
+
+      <ul
+        class="hidden lg:flex gap-8 items-center font-[600] text-lg justify-center"
+      >
+        <li>
+          <a
+            href="#home"
+            class="hover:underline active:text-primary transition-colors duration-100"
+          >
+            Strona Główna
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="events.html"
+            class="hover:underline active:text-primary transition-colors duration-100"
+          >
+          Wydarzenia
+          </a>
+        </li>
+        <li>
+          <a
+            href="contact.html"
+            class="hover:underline active:text-primary transition-colors duration-100"
+          >
+          Kontakt
+          </a>
+        </li>
+        <li>
+          <a
+            href="FAQ.html"
+            class="hover:underline active:text-primary transition-colors duration-100"
+          >
+          FAQ
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <header
+      class="w-full relative min-h-screen flex flex-col justify-center items-center gap-6 p-4 py-24 overflow-hidden text-center z-20 text-black heroBg"
+    >
+      <h1 class="text-5xl lg:text-7xl font-bold max-w-3xl">
+        Witaj na stronie Samorządu Studentów
+      </h1>
+      <p class="text-xl max-w-xl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis eaque
+        fugiat voluptatum, esse optio ex quam itaque non velit saepe culpa
+        beatae quisquam blanditiis maiores in ad temporibus ratione recusandae.
+      </p>
+      <div class="flex flex-wrap gap-4 items-center justify-center">
+        <a
+          href="FAQ.html"
+          class="p-4 px-6 bg-black text-white font-bold text-lg hover:bg-neutral-800 active:scale-105 transition-all duration-200"
+        >
+          FAQ
+        </a>
+        <a
+          href="contact.html"
+          class="p-4 px-6 text-black border-4 scale-95 border-black font-bold text-lg hover:bg-neutral-300/10 active:scale-105 transition-all duration-200"
+        >
+          Kontakt
+        </a>
+      </div>
+      <div class="w-full h-full bg-white/60 absolute top-0 left-0 z-[-1]"></div>
+    </header>
+
+    <section
+      id="onas"
+      class="max-w-4xl mx-auto flex flex-col items-center justify-center gap-8 my-24 text-center"
+    >
+      <h2 class="text-6xl font-bold">Kim jesteśmy?</h2>
+      <p class="text-xl">
+        Parlament Studentów Uniwersytetu Andrzeja Frycza Modrzewskiego tworzą
+        wszyscy studenci oraz studentki UAFM. Komisje Parlamentu Studentów na
+        poziomie uczelni stanowią kluczowe organy Parlamentu Studentów. Decyzję
+        o ich powołaniu lub rozwiązaniu podejmuje Uczelniana Rada Parlamentu
+        Studentów na wniosek Przewodniczącego Parlamentu.
+      </p>
+    </section>
+
+    <section
+      class="max-w-4xl mx-auto flex flex-col items-center justify-center gap-8 my-24 text-center"
+    >
+      <h3 class="text-6xl font-bold">Parlament Studentów kadencja 2023-2025</h3>
+    </section>
+
+    <section
+      class="flex flex-col justify-center items-center gap-12 p-4 mx-auto"
+    >
+      <div class="flex items-center gap-8">
+        <button
+          onclick="handleButtonClick(0)"
+          class="buttonChanger w-72 py-2 px-4 border-2 border-dashed border-neutral-900 text-neutral-900 text-xl font-bold rounded-xl duration-200 hover:rounded-md active:scale-95"
+        >
+          Rada uczelni
+        </button>
+        <button
+          onclick="handleButtonClick(1)"
+          class="buttonChanger w-72 py-2 px-4 border-2 border-dashed border-neutral-900 text-neutral-900 text-xl font-bold rounded-xl duration-200 hover:rounded-md active:scale-95"
+        >
+          Komisje
+        </button>
+        <button
+          onclick="handleButtonClick(2)"
+          class="buttonChanger w-72 py-2 px-4 border-2 border-dashed border-neutral-900 text-neutral-900 text-xl font-bold rounded-xl duration-200 hover:rounded-md active:scale-95"
+        >
+          Zarząd
+        </button>
+      </div>
+
+      <div class="mx-auto" id="radaContainer">
+        <!-- Rada Uczelni Component -->
+        <div
+          id="radaComponent"
+          class="flex flex-col items-center justify-center gap-8 text-center bg-white p-6 rounded-lg shadow-md max-w-lg w-full"
+        >
+          <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">
+            Rada Uczelni
+          </h2>
+          <ul class="space-y-2 text-gray-600">
+            <li>
+              <span class="font-medium">Przewodniczący:</span> Kacper Szymeczko
+            </li>
+            <li>
+              <span class="font-medium">Wiceprzewodniczący:</span> Damian Żemło
+            </li>
+            <li>
+              <span class="font-medium">Wiceprzewodniczący:</span> Bartosz
+              Dubisz
+            </li>
+            <li>
+              <span class="font-medium">Sekretarz:</span> Filip Kosiorowski
+            </li>
+          </ul>
+          <div class="mt-4">
+            <h3 class="text-lg font-semibold text-gray-700">Członkowie</h3>
+            <ul class="mt-2 space-y-1 text-gray-600">
+              <li>Patryk Hebda</li>
+              <li>Jan Wacławowicz</li>
+              <li>Jan Shlykov</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Struktura Komisyjna Component -->
+        <div
+          id="komisjaComponent"
+          class="flex flex-col items-center justify-center gap-8 text-center bg-white p-6 rounded-lg shadow-md max-w-lg w-full"
+        >
+          <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">
+            Struktura Komisyjna
+          </h2>
+
+          <!-- Individual Committees -->
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-700">
+              Komisja do spraw administracyjnych i budżetowych
+            </h3>
+            <p class="text-gray-600 mt-1">Kacper Szymeczko</p>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-700">
+              Komisja do spraw pomocy studenckiej i regulaminowych
+            </h3>
+            <ul class="mt-1 space-y-1 text-gray-600">
+              <li>Filip Kosiorowski</li>
+              <li>Bartosz Dubisz</li>
+            </ul>
+            <p class="text-gray-500 mt-2 text-sm">
+              Komisja zajmuje się sprawami regulaminowymi i odpowiada za
+              wszelkie czynności związane z kwestiami studenckimi.
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-700">
+              Komisja do spraw dydaktycznych
+            </h3>
+            <ul class="mt-1 space-y-1 text-gray-600">
+              <li>Patryk Hebda</li>
+              <li>Damian Żemło</li>
+            </ul>
+            <p class="text-gray-500 mt-2 text-sm">
+              Komisja reprezentuje sprawy każdej osoby studiującej, dbając o
+              jakość oraz konstruktywność dydaktyki.
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-700">
+              Komisja do spraw komunikacji
+            </h3>
+            <ul class="mt-1 space-y-1 text-gray-600">
+              <li>Laura Kowalczyk</li>
+              <li>Jowita Czulak</li>
+            </ul>
+            <p class="text-gray-500 mt-2 text-sm">
+              Komisja zajmuje się koordynacją i promocją Samorządu Studenckiego,
+              tworząc i utrzymując kontakt ze studentami poprzez różne kanały
+              komunikacji.
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-700">
+              Komisja do spraw Kultury Studenckiej
+            </h3>
+            <ul class="mt-1 space-y-1 text-gray-600">
+              <li>Jan Wacławowicz</li>
+              <li>Bartek Kuryło</li>
+              <li>Jan Shlykov</li>
+              <li>Jowita Czulak</li>
+              <li>Filip Wierzbik</li>
+              <li>Anna Ślesicka</li>
+            </ul>
+            <p class="text-gray-500 mt-2 text-sm">
+              Komisja organizuje wydarzenia artystyczne oraz tworzy przestrzeń,
+              w której studenci mogą swobodnie wyrażać swoje pomysły i talenty.
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-700">
+              Komisja do spraw równości akademickiej
+            </h3>
+            <ul class="mt-1 space-y-1 text-gray-600">
+              <li>Laura Kowalczyk</li>
+              <li>Eryk Wojnicki</li>
+              <li>Nikita Filipchuk</li>
+            </ul>
+            <p class="text-gray-500 mt-2 text-sm">
+              Komisja dba o równość i przeciwdziała nierównemu traktowaniu, aby
+              uczelnia była miejscem dla każdego.
+            </p>
+          </div>
+        </div>
+
+        <!-- Zarząd Component -->
+        <div
+          id="zarzadComponent"
+          class="flex flex-col items-center justify-center gap-8 text-center bg-white p-6 rounded-lg shadow-md max-w-lg w-full"
+        >
+          <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">
+            Zarząd
+          </h2>
+          <p class="text-gray-600 mb-4 text-center">
+            Zarząd jest kolegialnym organem wykonawczym Samorządu na szczeblu
+            uczelni.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li>
+              <span class="font-medium">Przewodniczący:</span> Kacper Szymeczko
+            </li>
+            <li>
+              <span class="font-medium">Wiceprzewodniczący:</span> Damian Żemło
+            </li>
+            <li>
+              <span class="font-medium">Wiceprzewodnicząca:</span> Laura
+              Kowalczyk
+            </li>
+            <li>
+              <span class="font-medium">Sekretarz:</span> Filip Kosiorowski
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    
+    <footer
+      id="dateFooter"
+      class="w-full px-6 py-8 bg-primary flex items-center justify-center gap-2 text-black"
+    >
+      © Wszystkie prawa zastrzeżone Parlament UAFM
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

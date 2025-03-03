@@ -1,0 +1,9 @@
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+.heroBg {
+  background: url("https://images.unsplash.com/photo-1590579491624-f98f36d4c763?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+    fixed center/cover;
+}
