@@ -1,45 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wydarzenia - SSUAFM</title>
-    <link rel="stylesheet" href="hamburger.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="hamburger.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00608C",
+                    },
+                },
+            },
+        };
+    </script>
 </head>
-<body>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navbar -->
     <nav class="absolute text-black w-full px-4 py-4 flex justify-between items-center xl:px-20 transition-all duration-700 bg-white shadow-md">
+        <!-- Logo -->
         <a href="index.html" class="text-3xl font-bold">SSUAFM</a>
-        <ul class="flex gap-8 items-center font-semibold text-lg">
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex gap-8 items-center font-semibold text-lg">
             <li><a href="index.html" class="hover:underline">Strona Główna</a></li>
             <li><a href="events.html" class="hover:underline">Wydarzenia</a></li>
             <li><a href="contact.html" class="hover:underline">Kontakt</a></li>
             <li><a href="faq.html" class="hover:underline">FAQ</a></li>
         </ul>
+
+        <!-- Burger Menu Icon for Mobile -->
+        <label class="flex lg:hidden z-50 relative">
+            <input type="checkbox" id="check" />
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
     </nav>
 
-    <section class="max-w-4xl mx-auto py-24 text-center">
-        <h2 class="text-6xl font-bold">Wydarzenia</h2>
-        <ul class="mt-8 space-y-4 text-left">
-            <li class="p-4 bg-gray-100 rounded-lg">
-                <h3 class="text-xl font-bold">Spotkanie organizacyjne</h3>
-                <p class="text-gray-600">15 marca - Aula Główna</p>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileNavigation" class="fixed top-0 right-0 h-screen w-fit bg-gradient-to-br from-neutral-100 to-neutral-300 flex flex-col items-center justify-start pt-24 border-l-2 border-white translate-x-[100%] transition-all duration-1000 origin-right ease-in-out z-40">
+        <ul class="flex flex-col justify-center items-end gap-8 text-xl font-bold p-8">
+            <li><a class="z-20" href="index.html">Strona Główna</a></li>
+            <li><a class="z-20" href="events.html">Wydarzenia</a></li>
+            <li><a class="z-20" href="contact.html">Kontakt</a></li>
+            <li><a class="z-20" href="faq.html">FAQ</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 sm:px-8 py-24">
+        <h2 class="text-4xl md:text-6xl font-bold text-center mb-8">Wydarzenia</h2>
+        
+        <ul class="space-y-6">
+            <!-- Event 1 -->
+            <li class="bg-gray-100 p-4 rounded-lg shadow-md">
+                <details class="group">
+                    <summary class="cursor-pointer text-xl font-bold flex justify-between items-center">
+                        Spotkanie organizacyjne
+                        <span class="group-open:rotate-180 transition-transform duration-300">▼</span>
+                    </summary>
+                    <p class="mt-2 text-gray-600">📅 15 marca - Aula Główna</p>
+                    <p class="mt-2 text-gray-700">Szczegóły: Omówienie planów na nowy semestr, przedstawienie nowych członków i sesja pytań i odpowiedzi.</p>
+                </details>
             </li>
-            <li class="p-4 bg-gray-100 rounded-lg">
-                <h3 class="text-xl font-bold">Konferencja studentów</h3>
-                <p class="text-gray-600">20 kwietnia - Sala Konferencyjna</p>
+
+            <!-- Event 2 -->
+            <li class="bg-gray-100 p-4 rounded-lg shadow-md">
+                <details class="group">
+                    <summary class="cursor-pointer text-xl font-bold flex justify-between items-center">
+                        Konferencja studentów
+                        <span class="group-open:rotate-180 transition-transform duration-300">▼</span>
+                    </summary>
+                    <p class="mt-2 text-gray-600">📅 20 kwietnia - Sala Konferencyjna</p>
+                    <p class="mt-2 text-gray-700">Szczegóły: Spotkanie studentów z przedstawicielami uczelni oraz prelekcje ekspertów.</p>
+                </details>
             </li>
-            <li class="p-4 bg-gray-100 rounded-lg">
-                <h3 class="text-xl font-bold">Warsztaty dla nowych członków</h3>
-                <p class="text-gray-600">5 maja - Budynek B, sala 203</p>
+
+            <!-- Event 3 -->
+            <li class="bg-gray-100 p-4 rounded-lg shadow-md">
+                <details class="group">
+                    <summary class="cursor-pointer text-xl font-bold flex justify-between items-center">
+                        Warsztaty dla nowych członków
+                        <span class="group-open:rotate-180 transition-transform duration-300">▼</span>
+                    </summary>
+                    <p class="mt-2 text-gray-600">📅 5 maja - Budynek B, sala 203</p>
+                    <p class="mt-2 text-gray-700">Szczegóły: Wprowadzenie do działalności SSUAFM, omówienie zasad i pierwsze praktyczne ćwiczenia.</p>
+                </details>
             </li>
         </ul>
-    </section>
+    </main>
 
-    <footer class="w-full px-6 py-8 bg-primary text-center text-black">
+    <!-- Footer -->
+    <footer class="w-full px-6 py-8 bg-primary text-center text-black mt-16">
         © Wszystkie prawa zastrzeżone Parlament UAFM
     </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
